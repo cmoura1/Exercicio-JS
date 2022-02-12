@@ -19,18 +19,27 @@
         </h3>
     
     <form>
-        <input type="text" id="F" onkeyup="convertCelsius()">
+        <input type="text" id="comp" placeholder="Comprimento da pista (metros)?">
+        <input type="text" id="total_voltas" placeholder="Total de voltas?">
+        <input type="text" id="quant_abast" placeholder="Quantidade de abastecimento?">
+        <input type="text" id="consumo" placeholder="Consumo do veiculo?">
+        <button type="button" onclick="quantLitros()"Ok></button>
     </form>
-    <span id="resposta"></span>        
+    <span id="saida"></span>        
 
 </body>
 
 </html>
 
 <script>
-    function convertCelsius() {
-        var f = parseFloat (document.getElementById("F").value);
-        var resp = (f - 32) * (5 / 9);
-        document.getElementById("resposta").innerHTML = "<b> Resposta: </b>" + resp        
+    function quantLitros() {
+        var comp = parseFloat (document.getElementById("comp").value);
+        var totalVoltas = parseInt (document.getElementById("total_voltas").value);
+        var quantAbast = parseInt (document.getElementById("quant_abast").value);
+        var consumo = parseFloat (document.getElementById("consumo").value);
+        
+        var litros = (((comp / 1000) * totalVoltas) / consumo) / quantAbast;
+        
+        document.getElementById("saida").innerHTML = "Quantidade de litros:" + litros + "L";        
     }
 </script>

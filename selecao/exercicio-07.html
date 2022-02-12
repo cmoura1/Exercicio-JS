@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p> Escreva um programa para ler 2 valores (considere que não serão informados valores iguais) e
+        escrever o maior deles.
+    </p>
+    <form>
+        <input type="text" id="numero" placeholder="Digite um numero" onkeyup="verFNNumero">
+        <button type="button" onclick="verFNNumero()">Ok</button>
+    </form>
+    <span id="saida"></span>
+    
+</body>
+
+</html>
+
+<script>
+    function verFNNumero(){
+        var n= parseFloat(document.getElementById("numero").value);
+        if (n >=0) {
+            document.getElementById("saida").innerHTML = "POSITIVO";
+        } else {
+            document.getElementById("saida").innerHTML = "NEGATIVO";
+        }
+    }
+</script>

@@ -14,7 +14,32 @@
         compradas pelo menos doze. Escreva um programa que leia o número de maçãs compradas, calcule e
         escreva o valor total da compra
     </p>
-
+    <form>
+        <input type="text" id="quant" placeholder="Digite a quantidade">
+        <button type="button" onclick="">Calcular</button>
+    </form>
 </body>
 
 </html>
+
+<script>
+    function principal(){
+        var quant = parseInt(document.getElementById("quant").value);
+        
+        document.getElementById("saida").innerHTML= "Valor a Pagar:" + calcularValores(quant);
+    }
+    
+    function calcularValores(){
+        var valorUnit = 0;
+
+        if(quantidade >= 12){
+            valorUnit = .25;
+
+        } else {
+            valorUnit = .30;
+        }
+        var resp = quantidade * valorUnit;
+        return resp
+    }
+
+</script>

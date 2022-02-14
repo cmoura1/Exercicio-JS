@@ -13,7 +13,23 @@
         Escreva um programa para ler o ano de nascimento de uma pessoa e escrever uma mensagem que
         diga se ela poderá ou não votar este ano (não é necessário considerar o mês em que ela nasceu)  
     </p>
-    
+    <form>
+        <input type="text" id="idade" placeholder="Digite sua idade">
+        <button type="button" onclick="iniciar()">Iniciar</button>
+    </form>
+    <span id="saida"></span>
 </body>
 
 </html>
+
+<script>
+    function iniciar(){
+        var idade = parseFloat(document.getElementById("idade").value);
+        if(idade > 18) {
+            document.getElementById("saida").innerHTML = "podera votar esse ano"}
+        else {
+            document.getElementById("saida").innerHTML = "Não podera votar esse ano"
+        }    
+        
+    }
+</script>

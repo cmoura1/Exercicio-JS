@@ -29,17 +29,15 @@
         document.getElementById("saida").innerHTML= "Valor a Pagar:" + calcularValores(quant);
     }
     
-    function calcularValores(){
+    function calcularValores(quantidade = 0, minQuant =12, valorMin=.25, valorMax=.35){
         var valorUnit = 0;
-
-        if(quantidade >= 12){
-            valorUnit = .25;
+        if(quantidade >= minQuant) {
+            valorUnit = valorMin;
 
         } else {
-            valorUnit = .30;
+            valorUnit = valorMax;
         }
         var resp = quantidade * valorUnit;
         return resp
     }
-
 </script>

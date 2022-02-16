@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -16,21 +16,21 @@
         ACESSO NEGADO caso a senha seja inválida.
     </p>
     <form>
-        <input type="text" id="quant" placeholder="Digite a senha">
-        <button type="button" onclick="">entrar</button>
-    </form> 
+        <input type="text" id="quant" placeholder="Digite a Quantidade">
+        <button type="button" onclick="principal()">Calcular</button>
+    </form>
     <span id="saida"></span>
-    
 </body>
+
 </html>
 
 <script>
-    function validar(){
-        var se = document.getElementById("senha").value;
-        if (se == "1234") {
-            document.getElementById("resposta").innerHTML = "ACESSO PERMITIDO"
-        } else{
-            document.getElementById("resposta").innerHTML = "ACESSO NEGADO"
+    function validar() {
+        var se = document.getElementById('senha').value;
+        if (se == '1234') {
+            document.getElementById('resposta').innerHTML = 'ACESSO PERMITIDO'
+        } else {
+            document.getElementById('resposta').innerHTML = 'ACESSO NEGADO'
         }
     }
 </script>

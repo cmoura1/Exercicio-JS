@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -17,7 +17,7 @@
         <input type="number" id="v1" placeholder="Digite um valor">
         <input type="number" id="v2" placeholder="Digite outro valor">
         <input type="number" id="v3" placeholder="Digite o ultimo valor">
-        <button type="button" onclick="mainController">Ordenar</button>
+        <button type="button" onclick="mainController()">Ordenar</button>
     </form> 
     <span id="saida"></span>   
 </body>
@@ -33,7 +33,7 @@
         document.getElementById('saida').innerHTML = ordenar(A, B, C);
     }    
 
-    function ordenar(a = 40, b = 20, c = 3) {
+    function ordenar(a = 40, b = 20, c = 0) {
         var temp = 0;
         if(a > b) {
             temp = a;     // temp recebe a logo = 40 e a = 40
@@ -53,6 +53,6 @@
             c = temp;   // 'c' que vale 20 recebe 'temp' que vale 40 logo b = 20 e c = 40
         }
 
-        return "" + a + "," + b + "," + c      
+        return " " + a + ", " + b + ", " + c      
     }   
 </script>

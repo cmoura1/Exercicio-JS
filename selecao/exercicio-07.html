@@ -13,8 +13,9 @@
         escrever o maior deles.
     </p>
     <form>
-        <input type="text" id="numero" placeholder="Digite um numero" onkeyup="verFNNumero">
-        <button type="button" onclick="verFNNumero()">Ok</button>
+        <input type="text" id="n1" placeholder="Digite um numero" onkeyup="vNumero()">
+        <input type="text" id="n2" placeholder="Digite outro numero" onkeyup="vNumero()">
+        <button type="button" onclick="vNumero()">clica</button>
     </form>
     <span id="saida"></span>
     
@@ -23,12 +24,13 @@
 </html>
 
 <script>
-    function verFNNumero(){
-        var n= parseFloat(document.getElementById("numero").value);
-        if (n >=0) {
-            document.getElementById("saida").innerHTML = "POSITIVO";
-        } else {
-            document.getElementById("saida").innerHTML = "NEGATIVO";
+    function vNumero(){
+        var n1= parseInt(document.getElementById("n1").value);
+        var n2= parseInt(document.getElementById("n2").value);
+        if (n1 > n2) {
+            document.getElementById("saida").innerHTML = "N1 Maior";
+        } else (n1 < n2) {
+            document.getElementById("saida").innerHTML = "N2 Maior";
         }
     }
 </script>

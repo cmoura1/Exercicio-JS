@@ -8,27 +8,33 @@
 </head>
 
 <body>
-<p>
-    Acrescente as seguintes mensagens à solução do exercício anterior conforme o caso.
-    - Caso o número de lados seja inferior a 3 escrever NÃO É UM POLÍGONO.
-    - Caso o número de lados seja superior a 5 escrever POLÍGONO NÃO IDENTIFICADO.
-    Observação: Considere que o usuário poderá informar qualquer valor para o número de lados.
-</p>
-<form>
-    <input type="number" id="v1" placeholder="Digite um valor">
-    <input type="number" id="v2" placeholder="Digite outro valor">
-    <input type="number" id="v3" placeholder="Digite o ultimo valor">
-    <button type="button" onclick="mainController()">Ordenar</button>
-</form> 
-<span id="saida"></span>
+    <p>
+        Acrescente as seguintes mensagens à solução do exercício anterior conforme o caso.
+        - Caso o número de lados seja inferior a 3 escrever NÃO É UM POLÍGONO.
+        - Caso o número de lados seja superior a 5 escrever POLÍGONO NÃO IDENTIFICADO.
+        Observação: Considere que o usuário poderá informar qualquer valor para o número de lados.
+    </p>
 
-
+    <form>
+        <input type="number" id="n1" placeholder="Digite quantos lados tem:">
+        <button type="button" onclick="mainController()">Resultado</button>        <button type="button" onclick="mainController()">Ordenar</button>
+    </form> 
+    <span id="saida"></span>
 </body>
 
 </html>
 
 <script>
-    function huhi() {
-        
+    function mainController() {
+        var n1 = parseInt(document.getElementById("n1").value);
+
+        document.getElementById("saida").innerHTML = ladoEmedida( n1 );    
+    }
+    function ladoEmedida(n1 = 0){
+        if (n1 < 3) {
+            return "Não é um polígono";
+        } else{
+            return "Polígono não identificado";
+        }
     }
 </script>

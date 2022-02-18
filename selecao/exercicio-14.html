@@ -9,12 +9,13 @@
 
 <body>
     <p>
-        Escreva um programa para ler o número de gols marcados pelo Grêmio e o número de gols marcados pelo Inter em um GRENAL. Escrever o nome do vencedor. Caso não haja vencedor deverá ser impressa a palavra EMPATE.
+        Escreva um programa para ler o número de gols marcados pelo Grêmio e o número de gols marcados pelo Inter em um GRENAL. Escrever o nome do vencedor. 
+        Caso não haja vencedor deverá ser impressa a palavra EMPATE.
     </p>
     <form>
-        <input type="numero" id="v1" placeholder="Numero de gols">
-        <input type="numero" id="v1" placeholder="Gols marcados">
-        <button type="button" onclick="mainController()">Ordenar</button>
+        <input type="numero" id="t1" placeholder="Gols Grêmio">
+        <input type="numero" id="t2" placeholder="Gols Inter">
+        <button type="button" onclick="mainController()">Verificar</button>
     </form>
     <span id="saida"></span>
 </body>
@@ -23,7 +24,19 @@
 
 <script>
     function mainController() {
-        document.getElementById().value;
+        var t1 = parseInt(document.querySelector("#t1").value);
+        var t2 = parseInt(document.querySelector("#t2").value);
+        document.querySelector("#saida").innerHTML = "Resultado: " + verifGols(t1, t2);
+    }
 
+    function verifGols(g1, g2){
+        if (g1 == g2) {
+            return "Empate";
+        }else if (g1 > g2) {
+            return "Gremio"
+        } else{
+            return "Inter"
+        }   
+        
     }
 </script>

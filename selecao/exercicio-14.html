@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+    
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,30 +14,38 @@
         Caso não haja vencedor deverá ser impressa a palavra EMPATE.
     </p>
     <form>
-        <input type="numero" id="t1" placeholder="Gols Grêmio">
-        <input type="numero" id="t2" placeholder="Gols Inter">
+        <input type="number" id="t1" placeholder="Gols Grêmio">
+        <input type="number" id="t2" placeholder="Gols Inter">
         <button type="button" onclick="mainController()">Verificar</button>
     </form>
     <span id="saida"></span>
+    <span id="lista"></span>
 </body>
 
 </html>
 
 <script>
+     var listaResultados = "";
+    const titulo = "aula";
+
     function mainController() {
-        var t1 = parseInt(document.querySelector("#t1").value);
+        var t1 = parseInt(document.querySelector("#t1").value); //document.getElementBYId == querySelector("#"
         var t2 = parseInt(document.querySelector("#t2").value);
         document.querySelector("#saida").innerHTML = "Resultado: " + verifGols(t1, t2);
+        console.log(listaResultados);
+        document.querySelector("#lista").innerHTML = "<h3>Lista de Resultados</h3> " + listaResultados;
     }
 
-    function verifGols(g1, g2){
+    function verifGols(g1 = 0, g2 = 0) {
         if (g1 == g2) {
-            return "Empate";
-        }else if (g1 > g2) {
-            return "Gremio"
-        } else{
-            return "Inter"
-        }   
-        
+            listaResultados += "<p>Gremio " + g1 + " X " + g2 + " Inter - Empate </p>";
+            return "Empate!";
+        } else if (g1 > g2) {
+            listaResultados += "<p>Gremio " + g1 + " X " + g2 + " Inter - Vencedor: Grêmio </p>";
+            return "Grêmio";
+        } else {
+            listaResultados += "<p>Gremio " + g1 + " X " + g2 + " Inter - Vencedor: Inter </p>";
+            return "Inter";
+        }
     }
 </script>

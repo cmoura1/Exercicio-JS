@@ -1,7 +1,7 @@
-const jogo = {
-    nomeUser:"",
-    emailUser:"",
-    telUser:"",
+const mensagem = {
+    nomeUser: "",
+    emailUser: "",
+    telUser: "",
     texto: "",
     atualizar: function(nome = "", email = "", tel = "", texto = "") {
         this.nomeUser = nome;
@@ -9,11 +9,11 @@ const jogo = {
         this.telUser = tel;
         this.texto = texto;
     },
-    enviar: function () {
+    enviar: function() {
         var error = "";
         if (error != "") {
-            return false;            
+            return false;
         }
         return true;
     }
-}
+};
